@@ -1,0 +1,27 @@
+#! /bin/sh
+set -e
+
+FIRMWARE_DIRECTORY=spark
+
+usage()
+{
+    echo "usage: $1 [<firmware_directory_name>]" >&2
+    exit 1
+}
+
+if [ "X$1" != "X" ]
+then
+    FIRMWARE_DIRECTORY="$1"
+fi
+
+DIR="$FIRMWARE_DIRECTORY/core-firmware/build"
+
+if [ ! -d "$DIR" ]
+then
+    echo "Firmware directory not found: \"$DIR\"" >&2
+    exit 1
+fi
+
+cd "$DIR"
+
+make clean dependents all

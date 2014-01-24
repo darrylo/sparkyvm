@@ -1,0 +1,27 @@
+#! /bin/sh
+set -e
+
+FIRMWARE_DIRECTORY=spark
+
+usage()
+{
+    echo "usage: $1 [<firmware_directory_name>]" >&2
+    exit 1
+}
+
+if [ "X$1" != "X" ]
+then
+    FIRMWARE_DIRECTORY="$1"
+fi
+
+if [ ! -d "$FIRMWARE_DIRECTORY" ]
+then
+    mkdir "$FIRMWARE_DIRECTORY"
+fi
+
+cd "$FIRMWARE_DIRECTORY"
+
+
+git clone https://github.com/spark/core-firmware.git
+git clone https://github.com/spark/core-common-lib.git
+git clone https://github.com/spark/core-communication-lib.git
