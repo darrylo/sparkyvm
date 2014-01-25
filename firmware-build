@@ -24,4 +24,4 @@ fi
 
 cd "$DIR"
 
-make clean dependents all
+make clean all
