@@ -123,7 +123,7 @@ Things to note
   outside.  Of course, this being linux, you can change that, but that's
   beyond the scope of this project; you're on your own if you want to do that.
 
-* The directory containing the "Vagrantfile" can be accessed inside the
+* The directory containing the `Vagrantfile` can be accessed inside the
   virtual machine, via the path `/Vagrant`.
 
 * To suspend the virtual machine, do:
