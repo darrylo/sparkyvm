@@ -12,7 +12,7 @@ everything is done via a command-line login.
 [Vagrant](http://www.vagrantup.com) is used, because it provides a near
 no-brainer way of easily creating and configuring virtual machines.
 
-Currently (as of January 24, 2014), a minimal 64-bit Unbuntu 12.10
+Currently (as of January 24, 2014), a minimal 64-bit Ubuntu 12.10
 installation is used.  The core virtual machine is obtained from the Vagrant
 web site, and then various programs are automatically installed via apt-get.
 
@@ -35,7 +35,7 @@ You need to download and install the following:
   use vmware, but that hasn't been tested; it may or may not work.
 
 You also need a significant amount of disk space.  The virtual machine is
-configured to use an 80GB virtual hard disk.  Intially, only around 2GB will
+configured to use an 80GB virtual hard disk.  Initially, only around 2GB will
 be used, but disk space will be automatically allocated as needed, up to 80GB.
 So, you need to insure that you have at least, say, 805GB of free disk space
 (the extra 5GB is there as a safety margin).
@@ -112,7 +112,7 @@ Things to note
 
 * You can connect to the virtual machine using:
 
-      vagrant ssh
+        vagrant ssh
 
   No password is necessary, and you can logout via the normal `exit`.  Note
   that you do not need to install any other ssh software; vagrant has
@@ -128,37 +128,37 @@ Things to note
 
 * To suspend the virtual machine, do:
 
-      vagrant suspend
+        vagrant suspend
 
 * To restart a suspended virtual machine, do:
 
-      vagrant up
+        vagrant up
 
   or:
 
-      vagrant resume
+        vagrant resume
 
 * To shut down the virtual machine:
 
-      vagrant halt
+        vagrant halt
 
   You can, of course, use the regular linux commands to shut down the system.
 
 * To destroy and annihilate the virtual machine and reclaim all disk space:
 
-      vagrant destroy
+        vagrant destroy
 
 * To obtain the Spark firmware source code, a convenience script has been
   provided.  To use it, chdir to some convenient location, and then run:
 
-      /vagrant/firmware-init
+        /vagrant/firmware-init
 
   This will create a directory called `spark` in the current directory, and
   download the source files below that.
 
 * To build the firmware, run:
 
-      /vagrant/firmware-build
+        /vagrant/firmware-build
 
   This assumes that the current directory is the one where you just ran
   `/vagrant/firmware-init` (the directory that contains the `spark`
@@ -175,12 +175,12 @@ Things to note
 
   Example:
 
-      cd /vagrant
-      /vagrant/firmware-init
-      /vagrant/firmware-build
+        cd /vagrant
+        /vagrant/firmware-init
+        /vagrant/firmware-build
 
   At this point, the new firmware can be found as
-  `/vagran/spark/core-firmware/build/core-firmware.bin`.  However, because
+  `/vagrant/spark/core-firmware/build/core-firmware.bin`.  However, because
   `/vagrant` is shared between the linux guest and the virtualbox host, you
   can use the host to transfer the new firmware to the core.
 
